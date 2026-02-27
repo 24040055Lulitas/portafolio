@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paradigma del Desarrollo Orientado a Servicios - Portafolio de Evidencias</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        .content-wrapper {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 3rem;
+            margin: 2rem 0;
+        }
+
+        .content-article h2 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin: 2.5rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(255, 107, 53, 0.3);
+        }
+
+        .content-article h3 {
+            color: #8b5cf6;
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+        }
+
+        .content-article h4 {
+            color: var(--text);
+            font-size: 1.25rem;
+            margin: 1.5rem 0 0.75rem;
+        }
+
+        .content-article p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.25rem;
+            text-align: justify;
+        }
+
+        .content-article ul {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin: 1rem 0 1.5rem 2rem;
+        }
+
+        .content-article li {
+            margin-bottom: 0.75rem;
+        }
+
+        .content-article strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(139, 92, 246, 0.1));
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .info-box {
+            background: rgba(139, 92, 246, 0.1);
+            border-left: 4px solid #8b5cf6;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .comparison-card {
+            background: rgba(139, 92, 246, 0.05);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .comparison-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(139, 92, 246, 0.5);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.2);
+        }
+
+        .comparison-card h4 {
+            color: #8b5cf6;
+            margin-top: 0;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .btn-print {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 1.75rem;
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-print:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.5);
+        }
+
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 1.75rem;
+            background: transparent;
+            color: var(--text);
+            text-decoration: none;
+            border-radius: 50px;
+            border: 2px solid rgba(139, 92, 246, 0.5);
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-back:hover {
+            background: rgba(139, 92, 246, 0.1);
+            transform: translateY(-2px);
+        }
+
+        @media print {
+            body { background: white; color: black; }
+            .bg-animation, header, footer, .breadcrumb-section, .action-buttons { display: none !important; }
+            .content-wrapper { background: white; border: none; box-shadow: none; }
+            .content-article h2, .content-article h3, .content-article h4, .content-article p, .content-article li { color: black; }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="container header-content">
+            <div class="logo">
+                <div class="logo-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                        <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                    </svg>
+                </div>
+                <span class="logo-text">Portafolio de Evidencias</span>
+            </div>
+            <nav class="nav-desktop">
+                <a href="../../index.html" class="nav-link">Inicio</a>
+                <a href="../../unidades.html" class="nav-link">Unidades</a>
+                <a href="../../contacto.html" class="nav-link">Contacto</a>
+            </nav>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <nav class="nav-mobile" id="navMobile">
+            <a href="../../index.html" class="nav-link">Inicio</a>
+            <a href="../../unidades.html" class="nav-link">Unidades</a>
+            <a href="../../contacto.html" class="nav-link">Contacto</a>
+        </nav>
+    </header>
+
+    <div class="bg-animation">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="../../index.html">Inicio</a>
+                <span class="separator">/</span>
+                <a href="../../unidades.html">Unidades</a>
+                <span class="separator">/</span>
+                <a href="../unidad.html?id=1">Unidad 1</a>
+                <span class="separator">/</span>
+                <span class="current">Saber 2</span>
+            </nav>
+        </div>
+    </section>
+
+    <section class="unit-detail-section">
+        <div class="container">
+            <div class="section-header">
+                <h1 class="section-title">
+                    <span class="highlight">Paradigma del Desarrollo de Aplicaciones Orientadas a Servicios</span>
+                </h1>
+                <p class="section-subtitle">Unidad 1 - Servicios en la Nube y Arquitecturas Modernas</p>
+            </div>
+
+            <div class="action-buttons">
+                <button onclick="window.print()" class="btn-print">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 6 2 18 2 18 9"/>
+                        <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+                        <rect x="6" y="14" width="12" height="8"/>
+                    </svg>
+                    Imprimir / Guardar PDF
+                </button>
+                <a href="../unidad.html?id=1" class="btn-back">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    Volver a Unidad 1
+                </a>
+            </div>
+
+            <div class="content-wrapper">
+                <article class="content-article">
+                    
+                    <h2>Servicios en la Nube: ¿Qué Ofrecen Hoy?</h2>
+
+                    <p>
+                        La evolución de la <strong>computación en la nube</strong> ha transformado radicalmente la infraestructura tecnológica. Hoy en día, la <strong>nube híbrida</strong> se presenta como una solución robusta que combina lo mejor de ambos mundos: la flexibilidad de los servicios públicos y la seguridad de las infraestructuras privadas.
+                    </p>
+
+                    <h3>Integración Coherente</h3>
+                    <p>
+                        Permite integrar la infraestructura local (on-premise) con proveedores líderes como <strong>AWS, Google Cloud y Azure</strong>, ofreciendo una experiencia unificada. Un ejemplo claro es AWS Outposts, que extiende los servicios AWS a tu propio centro de datos.
+                    </p>
+
+                    <h3>Beneficios Clave</h3>
+                    <ul>
+                        <li><strong>Escalabilidad dinámica:</strong> Ajusta recursos según la demanda</li>
+                        <li><strong>Reducción de costos:</strong> Optimiza la inversión en infraestructura</li>
+                        <li><strong>Continuidad operativa:</strong> Mayor resiliencia y disponibilidad</li>
+                        <li><strong>Cumplimiento normativo:</strong> Ideal para empresas con requisitos estrictos de seguridad y datos</li>
+                    </ul>
+
+                    <h2>Características de las Aplicaciones Orientadas a Servicios (SOA)</h2>
+
+                    <p>
+                        La <strong>Arquitectura Orientada a Servicios (SOA)</strong> es un enfoque fundamental para construir aplicaciones empresariales modernas. Se basa en la modularidad y la interoperabilidad, permitiendo que los sistemas sean más flexibles y adaptables.
+                    </p>
+
+                    <div class="comparison-grid">
+                        <div class="comparison-card">
+                            <h4>Microservicios</h4>
+                            <p>Las aplicaciones se dividen en componentes independientes y reutilizables, cada uno con una función específica. Esto facilita el desarrollo, despliegue y mantenimiento.</p>
+                        </div>
+
+                        <div class="comparison-card">
+                            <h4>Comunicación API</h4>
+                            <p>La interacción entre servicios se realiza a través de APIs estandarizadas. Esto asegura una comunicación eficiente y una integración sin fricciones entre diferentes módulos.</p>
+                        </div>
+
+                        <div class="comparison-card">
+                            <h4>Despliegue Flexible</h4>
+                            <p>Permite el despliegue en una variedad de entornos, ya sea nube pública, privada o híbrida, adaptándose a las necesidades de cada organización.</p>
+                        </div>
+
+                        <div class="comparison-card">
+                            <h4>Actualización Continua</h4>
+                            <p>Las aplicaciones pueden actualizarse de forma continua y aislada, sin afectar la totalidad del sistema, lo que acelera la entrega de nuevas funcionalidades y mejoras.</p>
+                        </div>
+                    </div>
+
+                    <h2>Aplicaciones Web Híbridas (Mashups): Concepto y Ventajas</h2>
+
+                    <p>
+                        Los <strong>Mashups</strong> representan una forma innovadora de integrar servicios web, ofreciendo soluciones ágiles y altamente personalizadas. Estas aplicaciones combinan datos y funcionalidades de diversas fuentes en una única interfaz de usuario.
+                    </p>
+
+                    <h3>Integración de Fuentes</h3>
+                    <p>
+                        Los Mashups consolidan información y funciones de <strong>múltiples servicios web</strong>, creando una experiencia unificada y rica en contenido.
+                    </p>
+
+                    <h3>Tecnologías Estándar</h3>
+                    <p>
+                        Se construyen utilizando tecnologías web ampliamente conocidas como <strong>JavaScript, HTML5 y CSS</strong>, lo que asegura su accesibilidad desde cualquier navegador.
+                    </p>
+
+                    <div class="highlight-box">
+                        <h4>Beneficios Clave</h4>
+                        <ul>
+                            <li><strong>Menor costo y tiempo de desarrollo:</strong> Agiliza la creación de nuevas soluciones</li>
+                            <li><strong>Acceso multiplataforma:</strong> Disponibles en diversos dispositivos sin necesidad de adaptaciones complejas</li>
+                            <li><strong>Actualización instantánea:</strong> Cambios reflejados al instante sin instalaciones manuales</li>
+                        </ul>
+                    </div>
+
+                    <h2>Comparación: Aplicaciones Nativas vs. Web Híbridas</h2>
+
+                    <p>
+                        Elegir entre una aplicación nativa y una web híbrida es una decisión estratégica que impacta el <strong>rendimiento, el costo y el tiempo de desarrollo</strong>. Ambas tienen ventajas y limitaciones importantes.
+                    </p>
+
+                    <div class="comparison-grid">
+                        <div class="comparison-card">
+                            <h4>Aplicaciones Nativas</h4>
+                            <ul>
+                                <li><strong>Rendimiento Superior:</strong> Optimizadas para el sistema operativo y hardware específicos</li>
+                                <li><strong>Acceso Total al Hardware:</strong> Utilizan todas las funcionalidades del dispositivo (cámara, GPS, sensores)</li>
+                                <li><strong>Costo y Complejidad:</strong> Desarrollo más costoso y requiere bases de código separadas para cada plataforma (iOS, Android)</li>
+                            </ul>
+                        </div>
+
+                        <div class="comparison-card">
+                            <h4>Aplicaciones Web Híbridas</h4>
+                            <ul>
+                                <li><strong>Desarrollo Rápido:</strong> Un solo código base para múltiples plataformas, reduciendo tiempo y esfuerzo</li>
+                                <li><strong>Mantenimiento Sencillo:</strong> Actualizaciones y correcciones se implementan una vez para todos los dispositivos</li>
+                                <li><strong>Limitaciones de Hardware:</strong> Acceso restringido a algunas funciones avanzadas del dispositivo</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h2>Casos de Uso Reales y Tendencias Actuales</h2>
+
+                    <p>
+                        El paradigma de desarrollo híbrido y orientado a servicios está siendo adoptado por <strong>líderes de la industria</strong> para impulsar la innovación y modernizar sus infraestructuras tecnológicas.
+                    </p>
+
+                    <h3>1. Modernización Empresarial</h3>
+                    <p>
+                        Empresas como <strong>IBM y AWS</strong> están a la vanguardia, ofreciendo soluciones híbridas que permiten a las organizaciones migrar y modernizar aplicaciones heredadas, acelerando su transformación digital.
+                    </p>
+
+                    <h3>2. Orquestación con Contenedores</h3>
+                    <p>
+                        La implementación de <strong>contenedores y Kubernetes</strong> se ha vuelto esencial para la orquestación y gestión eficiente de aplicaciones orientadas a servicios en entornos híbridos complejos.
+                    </p>
+
+                    <h3>3. Integración Ágil con Mashups</h3>
+                    <p>
+                        Los Mashups demuestran su valor al facilitar la <strong>integración rápida de servicios</strong> en sectores clave como finanzas, salud y comercio electrónico, permitiendo crear soluciones personalizadas en tiempo récord.
+                    </p>
+
+                    <h2>Conclusión: El Futuro es Híbrido y Orientado a Servicios</h2>
+
+                    <p>
+                        La convergencia de la nube híbrida, la arquitectura SOA y las aplicaciones web híbridas (Mashups) no es solo una tendencia, sino una <strong>estrategia esencial</strong> para las empresas que buscan mantenerse competitivas en el panorama digital actual.
+                    </p>
+
+                    <div class="info-box">
+                        <h3>Pilares del Éxito</h3>
+                        <ul>
+                            <li><strong>Agilidad y Escalabilidad:</strong> Estos modelos permiten a las organizaciones responder rápidamente a los cambios del mercado y escalar sus operaciones de manera eficiente</li>
+                            <li><strong>Eficiencia Operativa:</strong> La modularidad y la reutilización de servicios reducen los costos de desarrollo y mantenimiento, optimizando los recursos</li>
+                            <li><strong>Innovación Continua:</strong> Al adoptar este paradigma, se facilita la creación de nuevas soluciones y experiencias, impulsando la transformación digital</li>
+                        </ul>
+                    </div>
+
+                    <div class="highlight-box">
+                        <p>
+                            <strong>Reflexión final:</strong> Te invitamos a explorar cómo integrar estos modelos para potenciar tus desarrollos y asegurar el éxito de tu negocio en la era digital.
+                        </p>
+                    </div>
+
+                </article>
+            </div>
+
+            <div class="action-buttons">
+                <button onclick="window.print()" class="btn-print">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 6 2 18 2 18 9"/>
+                        <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+                        <rect x="6" y="14" width="12" height="8"/>
+                    </svg>
+                    Imprimir / Guardar PDF
+                </button>
+                <a href="../unidad.html?id=1" class="btn-back">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    Volver a Unidad 1
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3 class="footer-title">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                        <circle cx="12" cy="7" r="4"/>
+                    </svg>
+                    Estudiantes
+                </h3>
+                <p class="footer-text">Jaime Alberto García Escobedo</p>
+                <p class="footer-subtext">Grupo: 4DSMB</p>
+                <p class="footer-text mt-2">Cristian Raúl Saucedo Marín</p>
+                <p class="footer-subtext">Grupo: 4DSMB</p>
+            </div>
+            <div class="footer-section">
+                <h3 class="footer-title">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                    </svg>
+                    Docente
+                </h3>
+                <p class="footer-text">David López Belmares</p>
+                <p class="footer-subtext">Desarrollo Web</p>
+            </div>
+            <div class="footer-section">
+                <h3 class="footer-title">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                        <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                    </svg>
+                    Institución
+                </h3>
+                <p class="footer-text">Universidad Tecnológica de Coahuila</p>
+                <p class="footer-subtext">Desarrollo de Software Multiplataforma</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Portafolio de Evidencias - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script src="../../js/animaciones.js"></script>
+</body>
+</html>

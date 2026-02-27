@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecosistema Digital - Portafolio de Evidencias</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        .content-wrapper {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 3rem;
+            margin: 2rem 0;
+        }
+
+        .content-article h2 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin: 2.5rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(255, 107, 53, 0.3);
+        }
+
+        .content-article h3 {
+            color: #8b5cf6;
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+        }
+
+        .content-article h4 {
+            color: var(--text);
+            font-size: 1.25rem;
+            margin: 1.5rem 0 0.75rem;
+        }
+
+        .content-article p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.25rem;
+            text-align: justify;
+        }
+
+        .content-article ul {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin: 1rem 0 1.5rem 2rem;
+        }
+
+        .content-article li {
+            margin-bottom: 0.75rem;
+        }
+
+        .content-article strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(139, 92, 246, 0.1));
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .info-box {
+            background: rgba(139, 92, 246, 0.1);
+            border-left: 4px solid #8b5cf6;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: rgba(236, 72, 153, 0.05);
+            border: 1px solid rgba(236, 72, 153, 0.2);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(236, 72, 153, 0.5);
+            box-shadow: 0 10px 30px rgba(236, 72, 153, 0.2);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .btn-print {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 1.75rem;
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-print:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.5);
+        }
+
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 1.75rem;
+            background: transparent;
+            color: var(--text);
+            text-decoration: none;
+            border-radius: 50px;
+            border: 2px solid rgba(139, 92, 246, 0.5);
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-back:hover {
+            background: rgba(139, 92, 246, 0.1);
+            transform: translateY(-2px);
+        }
+
+        @media print {
+            body { background: white; color: black; }
+            .bg-animation, header, footer, .breadcrumb-section, .action-buttons { display: none !important; }
+            .content-wrapper { background: white; border: none; box-shadow: none; }
+            .content-article h2, .content-article h3, .content-article h4, .content-article p, .content-article li { color: black; }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="container header-content">
+            <div class="logo">
+                <div class="logo-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                        <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                    </svg>
+                </div>
+                <span class="logo-text">Portafolio de Evidencias</span>
+            </div>
+            <nav class="nav-desktop">
+                <a href="../../index.html" class="nav-link">Inicio</a>
+                <a href="../../unidades.html" class="nav-link">Unidades</a>
+                <a href="../../contacto.html" class="nav-link">Contacto</a>
+            </nav>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <nav class="nav-mobile" id="navMobile">
+            <a href="../../index.html" class="nav-link">Inicio</a>
+            <a href="../../unidades.html" class="nav-link">Unidades</a>
+            <a href="../../contacto.html" class="nav-link">Contacto</a>
+        </nav>
+    </header>
+
+    <div class="bg-animation">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="../../index.html">Inicio</a>
+                <span class="separator">/</span>
+                <a href="../../unidades.html">Unidades</a>
+                <span class="separator">/</span>
+                <a href="../unidad.html?id=2">Unidad 2</a>
+                <span class="separator">/</span>
+                <span class="current">Saber 1</span>
+            </nav>
+        </div>
+    </section>
+
+    <section class="unit-detail-section">
+        <div class="container">
+            <div class="section-header">
+                <h1 class="section-title">
+                    <span class="highlight">Ecosistema Digital: Geolocalización, Redes Sociales, Bases de Datos y Plataformas</span>
+                </h1>
+                <p class="section-subtitle">Unidad 2 - Tecnologías del Ecosistema Digital</p>
+            </div>
+
+            <div class="action-buttons">
+                <button onclick="window.print()" class="btn-print">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 6 2 18 2 18 9"/>
+                        <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+                        <rect x="6" y="14" width="12" height="8"/>
+                    </svg>
+                    Imprimir / Guardar PDF
+                </button>
+                <a href="../unidad.html?id=2" class="btn-back">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    Volver a Unidad 2
+                </a>
+            </div>
+
+            <div class="content-wrapper">
+                <article class="content-article">
+                    
+                    <p>
+                        Bienvenidos a un viaje por el <strong>ecosistema tecnológico</strong> que define nuestra era digital. Exploraremos cómo la geolocalización, las redes sociales, las bases de datos y las plataformas online se entrelazan para crear experiencias personalizadas, conectar personas y transformar industrias completas. Este ecosistema invisible pero omnipresente está redefiniendo cómo vivimos, trabajamos y nos relacionamos en el siglo XXI.
+                    </p>
+
+                    <h2>Geolocalización: El Poder de Saber Dónde Estamos</h2>
+
+                    <p>
+                        La <strong>geolocalización</strong> se ha convertido en una tecnología fundamental del ecosistema digital moderno. Más del <strong>80% de las aplicaciones móviles</strong> utilizan datos de ubicación para personalizar experiencias, desde recomendaciones de restaurantes cercanos hasta rutas de transporte optimizadas.
+                    </p>
+
+                    <div class="highlight-box">
+                        <p>
+                            <strong>Caso de éxito: Uber</strong><br>
+                            La plataforma conecta conductores y pasajeros en tiempo real gracias a la geolocalización precisa, transformando la industria del transporte urbano. Sin embargo, esta tecnología también plantea desafíos importantes de privacidad, especialmente cuando fuerzas de seguridad acceden a datos de ubicación comprados a intermediarios, afectando los derechos fundamentales de los usuarios.
+                        </p>
+                    </div>
+
+                    <h2>Redes Sociales y Geolocalización: Conectando Personas y Lugares</h2>
+
+                    <h3>Geoetiquetado en Redes</h3>
+                    <p>
+                        Plataformas como <strong>Instagram y Twitter</strong> permiten geolocalizar publicaciones, creando mapas interactivos de experiencias que facilitan campañas de marketing territorial y análisis de comportamiento urbano en tiempo real.
+                    </p>
+
+                    <h3>Análisis Territorial</h3>
+                    <p>
+                        Herramientas como <strong>Tweet Binder</strong> visualizan en mapas dinámicos dónde se comparten contenidos específicos, proporcionando información clave para estrategias de marketing geolocalizado y gestión de eventos masivos.
+                    </p>
+
+                    <h3>Publicidad Segmentada</h3>
+                    <p>
+                        La <strong>segmentación geográfica</strong> aumenta dramáticamente la eficacia publicitaria al permitir adaptar mensajes a costumbres culturales, idiomas locales y preferencias regionales específicas de cada mercado.
+                    </p>
+
+                    <div class="info-box">
+                        <p>
+                            <strong>Dato relevante:</strong> Más del 70% de las campañas publicitarias en redes sociales utilizan segmentación geográfica avanzada para aumentar significativamente el retorno de inversión (ROI).
+                        </p>
+                    </div>
+
+                    <h2>Bases de Datos: El Corazón Invisible del Mundo Digital</h2>
+
+                    <p>
+                        Las <strong>bases de datos</strong> constituyen la infraestructura invisible pero esencial que sostiene todo el ecosistema digital. Estas plataformas almacenan y procesan miles de millones de datos cada día, desde ubicaciones GPS hasta interacciones sociales, patrones de consumo y preferencias personales.
+                    </p>
+
+                    <h3>Características Clave</h3>
+
+                    <h4>Volumen Masivo</h4>
+                    <p>
+                        Procesamiento de <strong>petabytes de información</strong> en tiempo real para millones de usuarios simultáneos.
+                    </p>
+
+                    <h4>Cloud Computing</h4>
+                    <p>
+                        Netflix utiliza <strong>AWS</strong> para gestionar streaming sin interrupciones a 230 millones de usuarios globales.
+                    </p>
+
+                    <h4>Análisis Urbano</h4>
+                    <p>
+                        Datos geolocalizados enriquecen estudios urbanos y revelan patrones de concentración económica.
+                    </p>
+
+                    <h2>Plataformas Online: Espacios de Interacción y Negocio</h2>
+
+                    <h3>¿Qué son las Plataformas Digitales?</h3>
+                    <p>
+                        Las <strong>plataformas online</strong> son ecosistemas de software que conectan usuarios, empresas y servicios en espacios virtuales de interacción. Instagram, Amazon, Uber y Netflix son ejemplos paradigmáticos de cómo estas plataformas han transformado sectores completos de la economía global.
+                    </p>
+
+                    <p>
+                        Estas plataformas funcionan gracias a una robusta <strong>infraestructura TIC</strong> que incluye redes 5G de alta velocidad, servidores distribuidos globalmente y sistemas de cómputo en la nube que garantizan disponibilidad y escalabilidad. Sin esta infraestructura tecnológica, no existiría la interacción digital; sin las plataformas, la infraestructura carecería de propósito.
+                    </p>
+
+                    <h3>Componentes Clave</h3>
+                    <ul>
+                        <li>Software de conexión entre usuarios</li>
+                        <li>Redes 5G de alta velocidad</li>
+                        <li>Servidores distribuidos globalmente</li>
+                        <li>Sistemas de cómputo en la nube</li>
+                        <li>Interfaces de usuario intuitivas</li>
+                        <li>APIs de integración continua</li>
+                    </ul>
+
+                    <h2>Plataformas de Streaming: Contenido en Tiempo Real y a Demanda</h2>
+
+                    <h3>La Revolución del Streaming de Datos</h3>
+                    <p>
+                        El <strong>streaming</strong> representa uno de los avances más significativos en el consumo de contenido digital. A diferencia de los datos tradicionales, los flujos de streaming son continuos y urgentes, permitiendo análisis y respuesta inmediata a las necesidades del usuario.
+                    </p>
+
+                    <p>
+                        Plataformas como <strong>Netflix, Spotify y YouTube</strong> dependen completamente de tecnologías de streaming para personalizar recomendaciones y mejorar continuamente la experiencia del usuario. Este modelo genera enormes volúmenes de datos que requieren bases de datos extremadamente robustas y redes de distribución ultrarrápidas capaces de adaptarse a picos de demanda en milisegundos.
+                    </p>
+
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">230M</div>
+                            <div class="stat-label">Usuarios de Netflix</div>
+                            <p style="margin-top: 1rem; font-size: 0.9rem;">Usuarios globales accediendo simultáneamente a contenido en streaming</p>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-number">5PB</div>
+                            <div class="stat-label">Datos Diarios</div>
+                            <p style="margin-top: 1rem; font-size: 0.9rem;">Petabytes procesados cada día por plataformas principales</p>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-number">99.9%</div>
+                            <div class="stat-label">Disponibilidad</div>
+                            <p style="margin-top: 1rem; font-size: 0.9rem;">Tiempo de actividad garantizado por infraestructura cloud</p>
+                        </div>
+                    </div>
+
+                    <h2>Interconexión: Cómo Todo Funciona Junto</h2>
+
+                    <p>
+                        El verdadero poder del ecosistema digital emerge cuando estos componentes trabajan de forma <strong>sinérgica</strong>. La magia no está en las tecnologías aisladas, sino en su interconexión estratégica.
+                    </p>
+
+                    <h3>Ejemplos de Integración</h3>
+
+                    <h4>Uber</h4>
+                    <p>
+                        Combina geolocalización GPS, bases de datos distribuidas y plataformas online para conectar oferta y demanda de transporte en milisegundos.
+                    </p>
+
+                    <h4>Instagram</h4>
+                    <p>
+                        Fusiona redes sociales, geolocalización y análisis de datos para segmentar audiencias y medir impacto de campañas en tiempo real.
+                    </p>
+
+                    <h4>Streaming</h4>
+                    <p>
+                        Depende de infraestructura TIC avanzada para entregar contenido multimedia sin latencia a millones de usuarios simultáneos.
+                    </p>
+
+                    <h2>Desafíos y Futuro</h2>
+
+                    <h3>Privacidad y Regulación</h3>
+                    <p>
+                        El desafío más crítico es <strong>proteger datos de ubicación y personales</strong> en un mundo hiperconectado. Regulaciones como <strong>GDPR y CCPA</strong> buscan equilibrar innovación con derechos fundamentales, pero la batalla está lejos de resolverse.
+                    </p>
+
+                    <h3>Innovación Tecnológica</h3>
+                    <p>
+                        La <strong>inteligencia artificial y el big data</strong> están mejorando exponencialmente la personalización y el análisis predictivo en plataformas y servicios de streaming, creando experiencias cada vez más inmersivas y anticipatorias.
+                    </p>
+
+                    <h3>Infraestructura del Futuro</h3>
+                    <p>
+                        El despliegue global de <strong>redes 5G</strong> y la evolución de la computación en la nube forman la base tecnológica para la próxima generación de servicios digitales, incluyendo realidad aumentada y ciudades inteligentes.
+                    </p>
+
+                    <h2>Conclusión: El Ecosistema Digital que nos Conecta</h2>
+
+                    <p>
+                        La geolocalización, las redes sociales, las bases de datos y las plataformas online forman un sistema <strong>profundamente interdependiente</strong> que ha transformado radicalmente nuestra forma de comunicarnos, trabajar y consumir. Este ecosistema digital no es simplemente una colección de tecnologías aisladas, sino una red viva y en constante evolución que redefine continuamente los límites de lo posible.
+                    </p>
+
+                    <div class="highlight-box">
+                        <h4>Puntos Clave para Recordar:</h4>
+                        <ul>
+                            <li><strong>Comprensión:</strong> Entender esta red tecnológica es fundamental para aprovechar oportunidades emergentes y navegar los desafíos del mundo digital</li>
+                            <li><strong>Protección:</strong> Defender nuestros derechos digitales y privacidad requiere alfabetización tecnológica y participación activa en debates regulatorios</li>
+                            <li><strong>Innovación:</strong> El futuro digital se construye hoy: invitamos a explorar, innovar y participar activamente en esta revolución que transforma vidas</li>
+                        </ul>
+                    </div>
+
+                </article>
+            </div>
+
+            <div class="action-buttons">
+                <button onclick="window.print()" class="btn-print">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 6 2 18 2 18 9"/>
+                        <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+                        <rect x="6" y="14" width="12" height="8"/>
+                    </svg>
+                    Imprimir / Guardar PDF
+                </button>
+                <a href="../unidad.html?id=2" class="btn-back">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    Volver a Unidad 2
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3 class="footer-title">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                        <circle cx="12" cy="7" r="4"/>
+                    </svg>
+                    Estudiantes
+                </h3>
+                <p class="footer-text">Jaime Alberto García Escobedo</p>
+                <p class="footer-subtext">Grupo: 5DSMB</p>
+                <p class="footer-text mt-2">Cristian Raúl Saucedo Marín</p>
+                <p class="footer-subtext">Grupo: 5DSMB</p>
+            </div>
+            <div class="footer-section">
+                <h3 class="footer-title">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                    </svg>
+                    Docente
+                </h3>
+                <p class="footer-text">David López Belmares</p>
+                <p class="footer-subtext">Desarrollo Web</p>
+            </div>
+            <div class="footer-section">
+                <h3 class="footer-title">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                        <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                    </svg>
+                    Institución
+                </h3>
+                <p class="footer-text">Universidad Tecnológica de Coahuila</p>
+                <p class="footer-subtext">Desarrollo de Software Multiplataforma</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Portafolio de Evidencias - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script src="../../js/animaciones.js"></script>
+</body>
+</html>

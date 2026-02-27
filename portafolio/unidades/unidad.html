@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad - Portafolio de Evidencias</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-content">
+            <div class="logo">
+                <div class="logo-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                        <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                    </svg>
+                </div>
+                <span class="logo-text">Portafolio de Evidencias</span>
+            </div>
+            <nav class="nav-desktop">
+                <a href="../index.html" class="nav-link">Inicio</a>
+                <a href="../unidades.html" class="nav-link">Unidades</a>
+                <a href="../contacto.html" class="nav-link">Contacto</a>
+            </nav>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <nav class="nav-mobile" id="navMobile">
+            <a href="../index.html" class="nav-link">Inicio</a>
+            <a href="../unidades.html" class="nav-link">Unidades</a>
+            <a href="../contacto.html" class="nav-link">Contacto</a>
+        </nav>
+    </header>
+
+    <!-- Background Animation -->
+    <div class="bg-animation">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="../index.html">Inicio</a>
+                <span class="separator">/</span>
+                <a href="../unidades.html">Unidades</a>
+                <span class="separator">/</span>
+                <span class="current" id="breadcrumb-current">Unidad</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Unit Detail Section -->
+    <section class="unit-detail-section">
+        <div class="container">
+            <div class="section-header">
+                <h1 class="section-title">
+                    <span class="highlight" id="unit-titulo"></span>
+                </h1>
+                <p class="section-subtitle" id="unit-subtitulo"></p>
+                <p class="section-description" id="unit-descripcion"></p>
+            </div>
+
+            <!-- Saberes -->
+            <div class="content-category">
+                <h2 class="category-title">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                    </svg>
+                    Saberes
+                </h2>
+                <div class="saberes-grid" id="saberes-grid"></div>
+            </div>
+
+            <!-- Saber Hacer -->
+            <div class="content-category">
+                <h2 class="category-title">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="16 18 22 12 16 6"/>
+                        <polyline points="8 6 2 12 8 18"/>
+                    </svg>
+                    Saber Hacer
+                </h2>
+                <div class="hacer-grid" id="hacer-grid"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3 class="footer-title">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                        <circle cx="12" cy="7" r="4"/>
+                    </svg>
+                    Estudiantes
+                </h3>
+                <p class="footer-text">Jaime Alberto García Escobedo</p>
+                <p class="footer-subtext">Grupo: 5DSMB</p>
+                <p class="footer-text mt-2">Cristian Raúl Saucedo Marín</p>
+                <p class="footer-subtext">Grupo: 5DSMB</p>
+            </div>
+            <div class="footer-section">
+                <h3 class="footer-title">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                    </svg>
+                    Docente
+                </h3>
+                <p class="footer-text">David López Belmares</p>
+                <p class="footer-subtext">Desarrollo Web</p>
+            </div>
+            <div class="footer-section">
+                <h3 class="footer-title">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                        <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                    </svg>
+                    Institución
+                </h3>
+                <p class="footer-text">Universidad Tecnológica de Coahuila</p>
+                <p class="footer-subtext">Desarrollo de Software Multiplataforma</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Portafolio de Evidencias - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script>
+        // ── Datos de las unidades ─────────────────────────────────────────────
+        const unidades = {
+            1: {
+                titulo: 'Unidad 1',
+                subtitulo: 'Orientado a Servicios',
+                descripcion: 'Fundamentos de arquitecturas web modernas y servicios distribuidos'
+            },
+            2: {
+                titulo: 'Unidad 2',
+                subtitulo: 'Consumo de Servicios',
+                descripcion: 'Integración y consumo de APIs REST y servicios web externos'
+            },
+            3: {
+                titulo: 'Unidad 3',
+                subtitulo: 'Desarrollo de API',
+                descripcion: 'Diseño y construcción de APIs RESTful escalables y seguras'
+            },
+            4: {
+                titulo: 'Unidad 4',
+                subtitulo: 'Despliegue y Producción',
+                descripcion: 'Deploy, testing y mantenimiento de aplicaciones en producción'
+            }
+        };
+
+        // ── Leer y validar ?id= ───────────────────────────────────────────────
+        const params = new URLSearchParams(window.location.search);
+        let unidadId = parseInt(params.get('id')) || 1;
+        if (unidadId < 1 || unidadId > 4) unidadId = 1;
+
+        const unidad = unidades[unidadId];
+
+        // ── Actualizar título y textos ────────────────────────────────────────
+        document.title = `${unidad.titulo} - Portafolio de Evidencias`;
+        document.getElementById('breadcrumb-current').textContent = unidad.titulo;
+        document.getElementById('unit-titulo').textContent        = unidad.titulo;
+        document.getElementById('unit-subtitulo').textContent     = unidad.subtitulo;
+        document.getElementById('unit-descripcion').textContent   = unidad.descripcion;
+
+        // ── SVGs ──────────────────────────────────────────────────────────────
+        const svgBook = `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+        </svg>`;
+        const svgCode = `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="16 18 22 12 16 6"/>
+            <polyline points="8 6 2 12 8 18"/>
+        </svg>`;
+        const svgArrow = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>`;
+
+        // ── Generar tarjetas de Saberes (links a .html) ───────────────────────
+        const saberesGrid = document.getElementById('saberes-grid');
+        for (let i = 1; i <= 3; i++) {
+            saberesGrid.innerHTML += `
+                <a href="u${unidadId}/saber${i}.html" class="saber-card reveal">
+                    <div class="saber-number">0${i}</div>
+                    <div class="saber-icon">${svgBook}</div>
+                    <h3>Saber ${i}</h3>
+                    <p>Contenido teórico y conceptos fundamentales</p>
+                    <div class="saber-arrow">${svgArrow}</div>
+                </a>`;
+        }
+
+        // ── Generar tarjetas de Saber Hacer (links a .html) ───────────────────
+        const hacerGrid = document.getElementById('hacer-grid');
+        for (let i = 1; i <= 3; i++) {
+            hacerGrid.innerHTML += `
+                <a href="u${unidadId}/hacer${i}.html" class="hacer-card reveal">
+                    <div class="hacer-number">0${i}</div>
+                    <div class="hacer-icon">${svgCode}</div>
+                    <h3>Saber Hacer ${i}</h3>
+                    <p>Práctica y aplicación de conocimientos</p>
+                    <div class="hacer-arrow">${svgArrow}</div>
+                </a>`;
+        }
+    </script>
+
+    <!-- animaciones.js va DESPUÉS del bloque que genera las tarjetas,
+         así el DOMContentLoaded ya encontrará los .reveal insertados -->
+    <script src="../js/animaciones.js"></script>
+</body>
+</html>
